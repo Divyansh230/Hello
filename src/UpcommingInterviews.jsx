@@ -3,87 +3,80 @@ import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill }
 import { GiGiftOfKnowledge } from "react-icons/gi";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 
-function Home() {
+function UpcomingInterview() {
 
     const data = [
         {
-          name: 'Mock Interview 1',
-          uv: 4000,
-          pv: 2400,
-          amt: 2400,
+          name: 'Week 1',
+          upcoming: 5,
+          rating: 4.2,
         },
         {
-          name: 'Mock Interview 2',
-          uv: 3000,
-          pv: 1398,
-          amt: 2210,
+          name: 'Week 2',
+          upcoming: 7,
+          rating: 4.5,
         },
         {
-          name: 'Mock Interview 3',
-          uv: 2000,
-          pv: 9800,
-          amt: 2290,
+          name: 'Week 3',
+          upcoming: 3,
+          rating: 4.0,
         },
         {
-          name: 'Mock Interview 4',
-          uv: 2780,
-          pv: 3908,
-          amt: 2000,
+          name: 'Week 4',
+          upcoming: 9,
+          rating: 4.8,
         },
         {
-          name: 'Mock Interview 5',
-          uv: 1890,
-          pv: 4800,
-          amt: 2181,
+          name: 'Week 5',
+          upcoming: 6,
+          rating: 4.3,
         },
         {
-          name: 'Mock Interview 6',
-          uv: 2390,
-          pv: 3800,
-          amt: 2500,
+          name: 'Week 6',
+          upcoming: 4,
+          rating: 4.1,
         },
         {
-          name: 'Mock Interview 7',
-          uv: 3490,
-          pv: 4300,
-          amt: 2100,
+          name: 'Week 7',
+          upcoming: 8,
+          rating: 4.6,
         },
       ];
 
   return (
     <main className='main-container'>
         <div className='main-title'>
-            <h3 className='alpha'>MOCKMATE DASHBOARD</h3>
+            <h3 className='alpha'>UPCOMING INTERVIEWS</h3>
         </div>
 
         <div className='main-cards'>
             <div className='card'>
                 <div className='card-inner'>
-                    <h3>Total Interviews</h3>
+                    <h3>Total Upcoming Interviews</h3>
                     <BsPeopleFill />
                 </div>
-                <h1>300</h1>
+                <h1>40</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>Average Rating</h3>
                     <GiGiftOfKnowledge />
                 </div>
-                <h1>4.5/5</h1>
+                <h1>4.4/5</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
-                    <h3>Completed Interviews</h3>
+                    <h3>Most Popular Week</h3>
+                    <BsFillGrid3X3GapFill />
+                </div>
+                <h1>Week 4</h1>
+            </div>
+            <div className='card'>
+                <div className='card-inner'>
+                    <h3>Least Popular Week</h3>
                     <BsFillArchiveFill />
                 </div>
-                <h1>250</h1>
-            </div>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>Upcoming Interviews</h3>
-                    <BsFillBellFill />
-                </div>
-                <h1>50</h1>
+                <h1>Week 3</h1>
             </div>
         </div>
 
@@ -105,9 +98,8 @@ function Home() {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="pv" fill="#8884d8" />
-                <Bar dataKey="uv" fill="#82ca9d" />
-                </BarChart>
+                <Bar dataKey="upcoming" fill="#8884d8" />
+            </BarChart>
             </ResponsiveContainer>
 
             <ResponsiveContainer width="100%" height="100%">
@@ -127,8 +119,7 @@ function Home() {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                <Line type="monotone" dataKey="rating" stroke="#82ca9d" activeDot={{ r: 8 }} />
                 </LineChart>
             </ResponsiveContainer>
 
@@ -137,4 +128,4 @@ function Home() {
   )
 }
 
-export default Home
+export default UpcomingInterview;
